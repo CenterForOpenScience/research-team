@@ -1,0 +1,17 @@
+---
+title: "Retrospective Inclusion Coding Pilot"
+author: "Hannah Moshontz"
+format: html
+editor: visual
+---
+
+```{r}
+#| echo: false
+
+source("analyze_retro_pilot_v2.R")
+
+```
+
+# Coding notes
+
+-   no fields that describe the document (e.g., date) should be NA -- if the date of the decision is not available, we'll use the date of the manuscript submission or any other information we have
