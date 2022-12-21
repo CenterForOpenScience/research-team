@@ -4,33 +4,17 @@ require(googledrive)
 require(dplyr)
 require(stringr)
 
-# pull the id of an item in a folder based on a regex string (in quotation marks)
-# if confused about "dribble" read the googledrive documentation
-get_nested_gdir_id <- function(string, research_drive_project = TRUE, dribble = NULL) {
+# shortcut to use googledrive::drive_ls within the research team shared drive
+research_drive_ls <- function(string) {
 
-  if (!research_drive_project) {
-
-  id <- dribble |>
-    filter(str_detect(name, string)) |>
-    pull(id)
-
-  return(id)
-
-  }
-
-  if (research_drive_project) {
-
-    id <- shared_drive_find("Metascience Research Team") |>
-      drive_ls() |>
-      filter(str_detect(name, "Projects")) |>
-      pull(id) |>
-      drive_ls() |>
-      filter(str_detect(name, string)) |>
+    research_drive_id <- shared_drive_find("Metascience Research Team") |>
       pull(id)
 
-    return(id)
+    dribble <- drive_ls(research_drive_id, pattern = string)
 
-  }
+    return(dribble)
+
+
 }
 
 
