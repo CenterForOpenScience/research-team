@@ -7,7 +7,7 @@ editor: visual
 
 ```{r}
 #| echo: false
-
+googledrive::drive_auth(email = TRUE)
 source("analyze_retro_pilot_v2.R")
 
 ```

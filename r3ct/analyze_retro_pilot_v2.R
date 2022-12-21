@@ -7,7 +7,7 @@ library(googlesheets4)
 library(purrr)
 
 ###### functions
-
+drive_auth(email = TRUE)
 #source function scripts
 source("../tools/fn_gdrive.R")
 
