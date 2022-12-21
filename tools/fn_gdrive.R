@@ -6,7 +6,7 @@ require(stringr)
 
 # pull the id of an item in a folder based on a regex string (in quotation marks)
 # if confused about "dribble" read the googledrive documentation
-get_nested_gdir_id <- function(string, research_drive_project = TRUE, .dribble) {
+get_nested_gdir_id <- function(string, research_drive_project = TRUE, dribble = NULL) {
 
   if (!research_drive_project) {
 
