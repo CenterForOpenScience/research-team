@@ -55,6 +55,8 @@ coder2 <- get_retro_inclusion_pilot_sheet_id("v2") |>
 pilot_v2 <- coder1 |>
   full_join(coder2)
 
+write_csv(pilot_v2, "pilot_v2_codes.csv")
+
 #clean up
 rm(coder1, coder2)
 
